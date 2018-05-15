@@ -1,0 +1,21 @@
+{% extends 'layout.twig' %}
+
+{% block stylesheet %}
+  <link rel='stylesheet' href='css/estilosIndex.css'>
+{% endblock %}
+
+{% block javascript %}
+  <script src="js/funcionesIndex.js"></script>
+{% endblock %}
+
+{% block body %}
+
+    <div id="panelABM">
+        <div id="panelBotoneraABM">
+            <button id="agregarServicio" class="botonABM" type="submit">Agregar Servicio</button>
+            <button id="editarServicio" class="botonABM" type="submit">Editar Servicio</button>
+            <button id="eliminarServicio" class="botonABM" type="submit">Eliminar Servicio</button>
+        </div>
+    </div>
+
+{% endblock %}

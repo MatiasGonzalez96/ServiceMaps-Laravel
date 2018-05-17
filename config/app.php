@@ -163,6 +163,9 @@ return [
         //Twig
         TwigBridge\ServiceProvider::class,
 
+        //MongoDB
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
+
     ],
 
     /*
@@ -212,6 +215,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Twig' => TwigBridge\Facade\Twig::class,
+        'Moloquent' => Jenssegers\Mongodb\Eloquent\Model::class,
 
     ],
 

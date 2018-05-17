@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return View('index')->with('title', 'Service Maps');
-});
+//Get home
+Route::get('/', 'ControladorServicios@index');
+
+//Get agregar
+Route::get('/agregar', 'ControladorServicios@agregar');
+
+//Get editar
+Route::get('/editar', 'ControladorServicios@editar');
+
+//Get eliminar
+Route::get('/eliminar', 'ControladorServicios@eliminar');
+
+//Get servicios
+Route::get('/servicios', 'ControladorServicios@getServicios');

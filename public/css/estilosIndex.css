@@ -5,31 +5,47 @@ body
   overflow: auto;
 }
 
+#panelDescripcion
+{
+  height: auto;
+  width: 860px;
+  text-align: center;
+  margin: 50px auto;
+  margin-bottom: 10px;
+}
+
+#textoInformacion
+{
+  font-size: 25pt;
+  color: white;
+  display: inline-block;
+}
+
 #panelABM
 {
   height: auto;
   width: 860px;
   margin: 50px auto;
   padding: 10px;
-  background-color: white;
+  background-color: #A4A4A4;
 }
 
 #panelBotoneraABM
 {
-  height: 35px;
-  width: 860px;
-  margin: 50px auto;
-  text-align: center;
+  height: auto;
+  width: auto;
 }
 
 .botonABM
 {
-  width: 210px;
-  height: 35px;
+  width: 800px;
+  height: 100px;
   cursor: pointer;
   border: none;
+  font-size: 22pt;
+  margin: 15px auto;
+  display: block;
   text-align: center;
-  font-size: 14pt;
   background-color: grey;
 }
 

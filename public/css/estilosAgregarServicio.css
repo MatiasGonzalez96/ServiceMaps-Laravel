@@ -5,13 +5,53 @@ body
   overflow: auto;
 }
 
-#panelABM
+#panelDescripcion
+{
+  height: auto;
+  width: 860px;
+  text-align: center;
+  margin: 50px auto;
+  margin-bottom: 10px;
+}
+
+#textoInformacion
+{
+  font-size: 25pt;
+  color: white;
+  display: inline-block;
+}
+
+#panelAgregarServicio
 {
   height: auto;
   width: 860px;
   margin: 50px auto;
-  padding: 10px;
+  padding: 20px;
   background-color: white;
+}
+
+#panelBotonera
+{
+  height: auto;
+  width: auto;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.botonAgregar
+{
+  width: 200px;
+  height: 35px;
+  cursor: pointer;
+  border: none;
+  font-size: 13pt;
+  background-color: grey;
+}
+
+.botonAgregar:hover
+{
+  outline: none;
+  background-color: dimgray;
 }
 
 #panelFooter

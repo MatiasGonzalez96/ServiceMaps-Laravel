@@ -4,13 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Servicio;
-
 class ControladorServicios extends Controller
 {
 	public function index()
 	{
-		return View('index', ['title' => 'Service Maps', 'hola' => 'asd']);
+		return View('index', ['title' => 'Service Maps']);
 	}
 
 	public function agregar()
@@ -26,10 +24,5 @@ class ControladorServicios extends Controller
 	public function eliminar()
 	{
 		return View('eliminarServicio', ['title' => 'Eliminar Servicio']);
-	}
-
-	public function getServicios()
-	{
-		return Servicio::all();
 	}
 }

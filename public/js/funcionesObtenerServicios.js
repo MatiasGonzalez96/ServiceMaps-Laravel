@@ -1,14 +1,7 @@
 var servicios;
 
-$(function()
+$.get("./api/servicios", function(data, status)
 {
-    $.ajax({
-        url: "/servicios",
-        context: document.body,
-        success: function (data)
-        {
-            servicios = data;
-            alert(servicios);
-        }
-    });
+    servicios = data;
+    alert(servicios[0].nombre);
 });

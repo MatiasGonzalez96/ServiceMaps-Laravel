@@ -22,6 +22,3 @@ Route::get('/editar', 'ControladorServicios@editar');
 
 //Get eliminar
 Route::get('/eliminar', 'ControladorServicios@eliminar');
-
-//Get servicios
-Route::get('/servicios', 'ControladorServicios@getServicios');

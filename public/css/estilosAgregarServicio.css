@@ -3,6 +3,22 @@ body
   margin: 0 !important;
   padding: 0 !important;
   overflow: auto;
+  background-color: #1C1C1C;
+}
+
+#map
+{
+  height: 100%;
+  width: 100%;
+}
+
+#panelMapa
+{
+  height: 400px;
+  width: 860px;
+  margin: 50px auto;
+  padding: 10px;
+  background-color: grey;
 }
 
 #panelDescripcion
@@ -16,7 +32,7 @@ body
 
 #textoInformacion
 {
-  font-size: 25pt;
+  font-size: 18pt;
   color: white;
   display: inline-block;
 }
@@ -27,7 +43,7 @@ body
   width: 860px;
   margin: 50px auto;
   padding: 20px;
-  background-color: white;
+  background-color: #BDBDBD;
 }
 
 #panelBotonera
@@ -40,11 +56,11 @@ body
 
 .botonAgregar
 {
-  width: 200px;
+  width: 250px;
   height: 35px;
   cursor: pointer;
   border: none;
-  font-size: 13pt;
+  font-size: 15pt;
   background-color: grey;
 }
 
@@ -52,6 +68,36 @@ body
 {
   outline: none;
   background-color: dimgray;
+}
+
+#nombreServicio, #telefonoServicio, #paginaServicio, #horarioServicio, #direccionServicio, #tipoServicio, #imagenServicio
+{
+    height: 50px;
+    font-size: 16pt;
+}
+
+.select-selected, .select-items
+{
+    border: 1px solid #6E6E6E;
+    background-color: #6E6E6E;
+}
+
+#nombreServicio:focus, #telefonoServicio:focus, #paginaServicio:focus, #tipoServicio:focus, #horarioServicio:focus
+{
+    outline: 5px solid grey;
+    outline-offset: -5px;
+    box-shadow: none !important;
+}
+
+select-selected
+{
+
+   background-color: grey;
+}
+
+.etiqueta
+{
+    font-size: 14pt;
 }
 
 #panelFooter

@@ -6,29 +6,37 @@
 
 {% block javascript %}
   <script src="js/funcionesAgregarServicio.js"></script>
+  <script src="js/funcionesMapa.js"></script>
+  <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAEttQKWZVwwmLu9Rn9IV37PTCxFIdMNKs&libraries=geometry&callback=initMap' async defer></script>
 {% endblock %}
 
 {% block body %}
 
     <!-- Creo descripcion -->
     <div id="panelDescripcion">
-        <span id="textoInformacion">Ingrese los datos del servicio</span>
+        <span id="textoInformacion">Seleccione la ubicación del nuevo servicio (doble click)</span>
+    </div>
+
+    <!-- Creo panel del mapa -->
+    <div id="panelMapa">
+      <div id="map">
+      </div>
     </div>
 
     <div id="panelAgregarServicio">
-        <form id="myForm">
+        <form>
             <div class="form-row">
-                <div class="form-group col-md-5">
-                    <label>Nombre</label>
-                    <input type="text" class="form-control" name="fname" placeholder="Servicio">
+                <div class="form-group col-md-4">
+                    <label class="etiqueta">Nombre</label>
+                    <input type="text" class="form-control" id="nombreServicio" placeholder="Servicio">
                 </div>
                 <div class="form-group col-md-4">
-                    <label>Dirección</label>
-                    <input type="text" class="form-control" name="fname" placeholder="Calle 123">
+                    <label class="etiqueta">Dirección</label>
+                    <input type="text" class="form-control" id="direccionServicio" placeholder="Calle 123" disabled>
                 </div>
-                <div class="form-group col-md-3">
-                    <label>Tipo</label>
-                    <select class="form-control">
+                <div class="form-group col-md-4">
+                    <label class="etiqueta">Tipo</label>
+                    <select class="form-control" id="tipoServicio">
                         <option>Gomería</option>
                         <option>Estación de Servicio</option>
                         <option>Taller Mecánico</option>
@@ -37,29 +45,29 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label>Teléfono</label>
-                    <input type="tel" class="form-control" name="fname" placeholder="(0291) 455-5555">
+                    <label class="etiqueta">Teléfono</label>
+                    <input type="text" class="form-control" id="telefonoServicio" placeholder="(0291) 455-5555">
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Página Web</label>
-                    <input type="text" class="form-control" name="fname" placeholder="www.servicio.com">
+                    <label class="etiqueta">Página Web</label>
+                    <input type="text" class="form-control" id="paginaServicio" placeholder="www.servicio.com">
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>Horario</label>
-                    <select class="form-control">
+                <div class="form-group col-md-5">
+                    <label class="etiqueta">Horario</label>
+                    <select class="form-control" id="horarioServicio">
                         <option>De 08:00hs a 20:00hs</option>
                         <option>Abierto las 24hs</option>
                     </select>
                 </div>
-                <div class="form-group col-md-6">
-                    <label>Imágen</label>
-                    <input type="file" class="form-control-file" name="fname">
+                <div class="form-group col-md-7">
+                    <label class="etiqueta">Imágen</label>
+                    <input type="file" class="form-control-file" id="imagenServicio">
                 </div>
             </div>
             <div id="panelBotonera">
-                <button id="botonAgregarServicio" class="botonAgregar" type="submit" required>Agregar</button>
+                <button id="botonAgregarServicio" class="botonAgregar" type="button">Agregar Servicio</button>
             </div>
         </form>
     </div>

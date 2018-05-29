@@ -76,12 +76,6 @@ body
     font-size: 16pt;
 }
 
-.select-selected, .select-items
-{
-    border: 1px solid #6E6E6E;
-    background-color: #6E6E6E;
-}
-
 #nombreServicio:focus, #telefonoServicio:focus, #paginaServicio:focus, #tipoServicio:focus, #horarioServicio:focus
 {
     outline: 5px solid grey;
@@ -89,10 +83,10 @@ body
     box-shadow: none !important;
 }
 
-select-selected
+#tipoServicio option, #horarioServicio option
 {
-
-   background-color: grey;
+    color: white;
+    background-color: #6E6E6E;
 }
 
 .etiqueta

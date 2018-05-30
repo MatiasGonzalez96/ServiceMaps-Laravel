@@ -65,7 +65,7 @@ function hayCamposRepetidos()
 
     for (i = 0; i < servicios.length; i++)
     {
-        if (String(nombre.toLowerCase()) == String(servicios[i].nombre.toLowerCase()))
+        if (obtenerId(nombre) == servicios[i].id)
         {
             swal("No se pudo cargar el servicio", "El nombre ya está en uso", "error");
             return true;
@@ -85,7 +85,7 @@ function hayCamposRepetidos()
 function agregarServicio()
 {
     let nom = $('#nombreServicio').val();
-    let idServicio = obtenerId(nombre);
+    let idServicio = obtenerId(nom);
     let dir = $('#direccionServicio').val();
     let tel = $('#telefonoServicio').val();
     let web = $('#paginaServicio').val();
@@ -93,7 +93,7 @@ function agregarServicio()
     let hor = $('#horarioServicio').val();
     let lat = obtenerLatitud();
     let lng = obtenerLongitud();
-    let img = obtenerImagen(tipo);
+    let img = obtenerImagen(type);
 
     $.ajax
     ({

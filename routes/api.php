@@ -24,20 +24,7 @@ Route::get('/servicios', function ()
     return Servicio::all();
 });
 
-Route::post('/servicio', function (req, res)
+Route::post('/servicio', function ()
 {
-    Servicio.insert({'id': req.body.id},{ "$set": { 'valor' : req.body.valor}},
-      {upsert: true, setDefaultsOnInsert: true}, (err, servicio) => {
-          if (err) {
-              res
-                  .status(400)
-                  .json(err);
-          } else {
-              console.log("Se agrego el servicio correctamente");
-              res
-                  .status(201)
-                  .json(servicio);
-          }
-      })
-
+    Servicio::create(['name' => 'John']);
 });

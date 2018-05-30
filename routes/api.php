@@ -14,10 +14,30 @@ use App\Servicio;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request)
+{
     return $request->user();
 });
 
-Route::get('/servicios', function () {
+Route::get('/servicios', function ()
+{
     return Servicio::all();
+});
+
+Route::post('/servicio', function (req, res)
+{
+    Servicio.insert({'id': req.body.id},{ "$set": { 'valor' : req.body.valor}},
+      {upsert: true, setDefaultsOnInsert: true}, (err, servicio) => {
+          if (err) {
+              res
+                  .status(400)
+                  .json(err);
+          } else {
+              console.log("Se agrego el servicio correctamente");
+              res
+                  .status(201)
+                  .json(servicio);
+          }
+      })
+
 });

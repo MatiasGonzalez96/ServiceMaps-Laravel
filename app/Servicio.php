@@ -6,6 +6,5 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
 class Servicio extends Eloquent
 {
-    protected $connection = 'mongodb';
     protected $collection = 'servicios';
 }

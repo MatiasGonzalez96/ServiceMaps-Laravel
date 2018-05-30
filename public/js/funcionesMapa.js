@@ -1,6 +1,7 @@
 var map;
 var ultimoMarcador;
 var geocoder;
+var latlng;
 
 function initMap()
 {
@@ -34,26 +35,25 @@ function initMap()
     {
 		var latitud = event.latLng.lat();
 		var longitud = event.latLng.lng();
-
-		crearMarcador(latitud, longitud);
-        var latLng = new google.maps.LatLng(latitud, longitud);
-        mostrarDireccion(latLng);
+        latlng = new google.maps.LatLng(latitud, longitud);
+		crearMarcador();
+        mostrarDireccion();
 	});
 }
 
-function crearMarcador(latitud, longitud)
+function crearMarcador()
 {
     ultimoMarcador.setMap(null);
     ultimoMarcador = new google.maps.Marker({
-        position: new google.maps.LatLng(latitud, longitud),
+        position: latlng,
         map: map,
         label: "S"
     });
 }
 
-function mostrarDireccion(latLng)
+function mostrarDireccion()
 {
-    geocoder.geocode({'latLng': latLng}, function(results, status)
+    geocoder.geocode({'latLng': latlng}, function(results, status)
     {
         if (status == google.maps.GeocoderStatus.OK)
         {
@@ -66,4 +66,19 @@ function mostrarDireccion(latLng)
             }
         }
     });
+}
+
+function eliminarMarcador()
+{
+	ultimoMarcador.setMap(null);
+}
+
+function obtenerLatitud()
+{
+	return latlng.lat();
+}
+
+function obtenerLongitud()
+{
+	return latlng.lng();
 }

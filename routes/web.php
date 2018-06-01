@@ -22,3 +22,6 @@ Route::get('/editar', 'ControladorServicios@editar');
 
 //Get eliminar
 Route::get('/eliminar', 'ControladorServicios@eliminar');
+
+//Post agregar
+Route::post('agregar', 'ControladorAgregar@agregar');

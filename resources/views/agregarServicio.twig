@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block javascript %}
-  <script src="js/funcionesAgregarServicio.js"></script>
   <script src="js/funcionesMapa.js"></script>
   <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAEttQKWZVwwmLu9Rn9IV37PTCxFIdMNKs&libraries=geometry&callback=initMap' async defer></script>
 {% endblock %}
@@ -14,58 +13,88 @@
 
     <!-- Creo descripcion -->
     <div id="panelDescripcion">
-        <span id="textoInformacion">Seleccione la ubicación del nuevo servicio (doble click)</span>
-    </div>
-
-    <!-- Creo panel del mapa -->
-    <div id="panelMapa">
-      <div id="map">
-      </div>
+        <span id="textoInformacion">Ingrese los datos del nuevo servicio</span>
     </div>
 
     <div id="panelAgregarServicio">
-        <form>
+
+        <form method="POST" action="agregar">
+
+            {{ csrf_field() }}
+
             <div class="form-row">
+
                 <div class="form-group col-md-7">
-                    <label class="etiqueta">Nombre</label>
-                    <input type="text" class="form-control" id="nombreServicio" placeholder="Servicio">
+                    <label class="etiqueta" for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Servicio" name="nombre">
                 </div>
+
                 <div class="form-group col-md-5">
-                    <label class="etiqueta">Tipo</label>
-                    <select class="form-control" id="tipoServicio">
-                        <option>Gomería</option>
-                        <option>Estación de Servicio</option>
-                        <option>Taller Mecánico</option>
+                    <label class="etiqueta" for="tipo">Tipo</label>
+                    <select class="form-control" id="tipo" name="tipo">
+                        <option value="Gomería">Gomería</option>
+                        <option value="Estación de Servicio">Estación de Servicio</option>
+                        <option value="Taller Mecánico">Taller Mecánico</option>
                     </select>
                 </div>
+
             </div>
+
             <div class="form-row">
-                <div class="form-group col-md-5">
-                    <label class="etiqueta">Teléfono</label>
-                    <input type="text" class="form-control" id="telefonoServicio" placeholder="(0291) 455-5555">
+
+                <div class="form-group col-md-3">
+                    <label class="etiqueta" for="telefono">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" placeholder="(0291) 455-5555" name="telefono">
                 </div>
-                <div class="form-group col-md-7">
-                    <label class="etiqueta">Página Web</label>
-                    <input type="text" class="form-control" id="paginaServicio" placeholder="www.servicio.com">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-5">
-                    <label class="etiqueta">Horario</label>
-                    <select class="form-control" id="horarioServicio">
-                        <option>De 08:00hs a 20:00hs</option>
-                        <option>Abierto las 24hs</option>
+
+                <div class="form-group col-md-4">
+                    <label class="etiqueta" for="horario">Horario</label>
+                    <select class="form-control" id="horario" name="horario">
+                        <option value="De 08:00hs a 20:00hs">De 08:00hs a 20:00hs</option>
+                        <option value="Abierto las 24hs">Abierto las 24hs</option>
                     </select>
                 </div>
-                <div class="form-group col-md-7">
-                    <label class="etiqueta">Dirección</label>
-                    <input type="text" class="form-control" id="direccionServicio" placeholder="Calle 123" disabled>
+
+                <div class="form-group col-md-5">
+                    <label class="etiqueta" for="paginaweb">Página Web</label>
+                    <input type="text" class="form-control" id="pagina" placeholder="www.servicio.com" name="sitioweb">
                 </div>
+
             </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-4">
+                    <label class="etiqueta" for="direccion">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" placeholder="Prueba 123" readonly name="direccion">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="etiqueta" for="latitud">Latitud</label>
+                    <input type="text" class="form-control" id="latitud" placeholder="Latitud" readonly name="latitud">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="etiqueta" for="longitud">Longitud</label>
+                    <input type="text" class="form-control" id="longitud" placeholder="Longitud" readonly name="longitud">
+                </div>
+
+            </div>
+
+            <div id="panelDescripcion">
+                <span id="textoMapa">Click en el mapa para elegir la ubicación</span>
+            </div>
+
+            <div id="panelMapa">
+              <div id="map"></div>
+            </div>
+
             <div id="panelBotonera">
-                <button id="botonAgregarServicio" class="botonAgregar" type="button">Agregar Servicio</button>
+                <button id="botonAgregarServicio" class="botonAgregar" type="submit">Agregar Servicio</button>
             </div>
+
         </form>
+
     </div>
 
 {% endblock %}

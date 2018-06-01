@@ -1,13 +1,5 @@
 $(function()
 {
-    $("#linkInicio").click(function()
-    {
-        window.location.href = "/";
-    });
-});
-
-$(function()
-{
     $("#agregarServicio").click(function()
     {
         window.location.href = "/agregar";

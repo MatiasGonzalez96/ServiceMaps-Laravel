@@ -31,7 +31,7 @@ function initMap()
     ultimoMarcador = new google.maps.Marker;
     geocoder = new google.maps.Geocoder();
 
-    google.maps.event.addListener(map,'dblclick',function(event)
+    google.maps.event.addListener(map,'click',function(event)
     {
 		var latitud = event.latLng.lat();
 		var longitud = event.latLng.lng();
@@ -62,7 +62,9 @@ function mostrarDireccion()
                 var numero = results[0].address_components[0].short_name;
                 var calle = results[0].address_components[1].short_name;
                 var direccion = calle + " " + numero;
-                $('#direccionServicio').val(direccion);
+                $('#direccion').val(direccion);
+				$('#latitud').val(latlng.lat);
+				$('#longitud').val(latlng.lng);
             }
         }
     });
@@ -71,14 +73,4 @@ function mostrarDireccion()
 function eliminarMarcador()
 {
 	ultimoMarcador.setMap(null);
-}
-
-function obtenerLatitud()
-{
-	return latlng.lat();
-}
-
-function obtenerLongitud()
-{
-	return latlng.lng();
 }

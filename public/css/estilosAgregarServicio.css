@@ -14,9 +14,10 @@ body
 
 #panelMapa
 {
-  height: 400px;
-  width: 860px;
-  margin: 50px auto;
+  height: 350px;
+  width: 800px;
+  margin: 20px auto;
+  margin-bottom: 50px;
   padding: 10px;
   background-color: grey;
 }
@@ -34,6 +35,13 @@ body
 {
   font-size: 18pt;
   color: white;
+  display: inline-block;
+}
+
+#textoMapa
+{
+  font-size: 14pt;
+  color: black;
   display: inline-block;
 }
 
@@ -70,20 +78,20 @@ body
   background-color: dimgray;
 }
 
-#nombreServicio, #telefonoServicio, #paginaServicio, #horarioServicio, #direccionServicio, #tipoServicio, #imagenServicio
+#nombre, #telefono, #pagina, #horario, #direccion, #tipo, #imagen, #latitud, #longitud
 {
     height: 50px;
     font-size: 16pt;
 }
 
-#nombreServicio:focus, #telefonoServicio:focus, #paginaServicio:focus, #tipoServicio:focus, #horarioServicio:focus
+#nombre:focus, #telefono:focus, #pagina:focus, #tipo:focus, #horario:focus, #direccion:focus, #latitud:focus, #longitud:focus
 {
     outline: 5px solid grey;
     outline-offset: -5px;
     box-shadow: none !important;
 }
 
-#tipoServicio option, #horarioServicio option
+#tipo option, #horario option
 {
     color: white;
     background-color: #6E6E6E;

@@ -10,7 +10,13 @@
 
     <div id="panelABM">
 
-        Editar servicio
+        @foreach ($servicios as $servicio)
+
+            {{ $servicio -> nombre }}
+
+            <hr>
+
+        @endforeach
 
     </div>
 

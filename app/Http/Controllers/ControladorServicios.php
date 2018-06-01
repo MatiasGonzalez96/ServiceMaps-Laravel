@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Servicio;
+
 class ControladorServicios extends Controller
 {
 	public function index()
@@ -18,7 +20,9 @@ class ControladorServicios extends Controller
 
 	public function editar()
 	{
-		return view('editarServicio');
+		$servicios = Servicio::all();
+
+		return view('editarServicio', ['servicios' => $servicios]);
 	}
 
 	public function eliminar()

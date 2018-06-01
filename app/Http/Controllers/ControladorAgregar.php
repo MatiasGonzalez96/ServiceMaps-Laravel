@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Servicio;
 
 class ControladorAgregar extends Controller
@@ -28,7 +29,7 @@ class ControladorAgregar extends Controller
         $servicio->sitioweb = $request->sitioweb;
         $servicio->horario = $request->horario;
 
-        //Cargar imagen por defecto (cambiar!)
+        //Carga la imagen por defecto
         if ($servicio->tipo == "Gomería")
         {
             $servicio->imagen = "gomeria.jpg";

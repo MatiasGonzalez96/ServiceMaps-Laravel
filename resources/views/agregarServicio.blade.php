@@ -3,12 +3,13 @@
 @section('pageTitle', 'Agregar Servicio')
 
 @section('estilos')
-  <link rel='stylesheet' href='css/estilosAgregarServicio.css'>
+    <link rel='stylesheet' href='css/estilosAgregarServicio.css'>
 @stop
 
 @section('javascripts')
-  <script src="js/funcionesMapa.js"></script>
-  <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAEttQKWZVwwmLu9Rn9IV37PTCxFIdMNKs&libraries=geometry&callback=initMap' async defer></script>
+    <script src="js/funcionesAgregarServicio.js"></script>
+    <script src="js/funcionesMapa.js"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAEttQKWZVwwmLu9Rn9IV37PTCxFIdMNKs&libraries=geometry&callback=initMap' async defer></script>
 @stop
 
 @section('body')
@@ -58,7 +59,7 @@
                 </div>
 
                 <div class="form-group col-md-5">
-                    <label class="etiqueta" for="paginaweb">Página Web</label>
+                    <label class="etiqueta" for="paginaweb">Sitio Web</label>
                     <input type="text" class="form-control" id="pagina" placeholder="www.servicio.com" name="sitioweb" required>
                 </div>
 
@@ -92,7 +93,8 @@
             </div>
 
             <div id="panelBotonera">
-                <button id="botonAgregarServicio" class="botonAgregar" type="submit">Agregar Servicio</button>
+                <button class="botonAgregar" type="submit">Agregar Servicio</button>
+                <button id="botonVolver" class="botonAgregar" type="button">Volver</button>
             </div>
 
             @include ('error')

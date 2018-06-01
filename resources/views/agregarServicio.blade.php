@@ -1,15 +1,17 @@
-{% extends 'layout.twig' %}
+@extends('layout')
 
-{% block stylesheet %}
+@section('pageTitle', 'Agregar Servicio')
+
+@section('estilos')
   <link rel='stylesheet' href='css/estilosAgregarServicio.css'>
-{% endblock %}
+@stop
 
-{% block javascript %}
+@section('javascripts')
   <script src="js/funcionesMapa.js"></script>
   <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAEttQKWZVwwmLu9Rn9IV37PTCxFIdMNKs&libraries=geometry&callback=initMap' async defer></script>
-{% endblock %}
+@stop
 
-{% block body %}
+@section('body')
 
     <!-- Creo descripcion -->
     <div id="panelDescripcion">
@@ -26,7 +28,7 @@
 
                 <div class="form-group col-md-7">
                     <label class="etiqueta" for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Servicio" name="nombre">
+                    <input type="text" class="form-control" id="nombre" placeholder="Servicio" name="nombre" required>
                 </div>
 
                 <div class="form-group col-md-5">
@@ -44,7 +46,7 @@
 
                 <div class="form-group col-md-3">
                     <label class="etiqueta" for="telefono">Teléfono</label>
-                    <input type="text" class="form-control" id="telefono" placeholder="(0291) 455-5555" name="telefono">
+                    <input type="text" class="form-control" id="telefono" placeholder="(0291) 455-5555" name="telefono" required>
                 </div>
 
                 <div class="form-group col-md-4">
@@ -57,7 +59,7 @@
 
                 <div class="form-group col-md-5">
                     <label class="etiqueta" for="paginaweb">Página Web</label>
-                    <input type="text" class="form-control" id="pagina" placeholder="www.servicio.com" name="sitioweb">
+                    <input type="text" class="form-control" id="pagina" placeholder="www.servicio.com" name="sitioweb" required>
                 </div>
 
             </div>
@@ -66,17 +68,17 @@
 
                 <div class="form-group col-md-4">
                     <label class="etiqueta" for="direccion">Dirección</label>
-                    <input type="text" class="form-control" id="direccion" placeholder="Prueba 123" readonly name="direccion">
+                    <input type="text" class="form-control" id="direccion" placeholder="Prueba 123" readonly name="direccion" required>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="etiqueta" for="latitud">Latitud</label>
-                    <input type="text" class="form-control" id="latitud" placeholder="Latitud" readonly name="latitud">
+                    <input type="text" class="form-control" id="latitud" placeholder="Latitud" readonly name="latitud" required>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="etiqueta" for="longitud">Longitud</label>
-                    <input type="text" class="form-control" id="longitud" placeholder="Longitud" readonly name="longitud">
+                    <input type="text" class="form-control" id="longitud" placeholder="Longitud" readonly name="longitud" required>
                 </div>
 
             </div>
@@ -93,8 +95,10 @@
                 <button id="botonAgregarServicio" class="botonAgregar" type="submit">Agregar Servicio</button>
             </div>
 
+            @include ('error')
+
         </form>
 
     </div>
 
-{% endblock %}
+@stop

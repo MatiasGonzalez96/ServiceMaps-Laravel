@@ -8,21 +8,21 @@ class ControladorServicios extends Controller
 {
 	public function index()
 	{
-		return View('index', ['title' => 'Service Maps']);
+		return view('index');
 	}
 
 	public function agregar()
 	{
-		return View('agregarServicio', ['title' => 'Agregar Servicio']);
+		return view('agregarServicio');
 	}
 
 	public function editar()
 	{
-		return View('editarServicio', ['title' => 'Editar Servicio']);
+		return view('editarServicio');
 	}
 
 	public function eliminar()
 	{
-		return View('eliminarServicio', ['title' => 'Eliminar Servicio']);
+		return view('eliminarServicio');
 	}
 }

@@ -9,11 +9,19 @@ class ControladorAgregar extends Controller
 {
     public function agregar(Request $request)
     {
+        $this->validate(request(), [
+
+            'nombre' => 'required',
+            'telefono' => 'required',
+            'sitioweb' => 'required',
+            'direccion' => 'required'
+
+        ]);
+
         $servicio = new Servicio();
 
         $servicio->id = strtolower(preg_replace("/\s+/", "", $request->nombre));
         $servicio->nombre = $request->nombre;
-        $servicio->tipo = $request->tipo;
         $servicio->tipo = $request->tipo;
         $servicio->telefono = $request->telefono;
         $servicio->direccion = $request->direccion;

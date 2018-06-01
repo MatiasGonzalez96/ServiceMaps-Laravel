@@ -1,14 +1,16 @@
-{% extends 'layout.twig' %}
+@extends('layout')
 
-{% block stylesheet %}
+@section('pageTitle', 'Service Maps')
+
+@section('estilos')
     <link rel='stylesheet' href='css/estilosIndex.css'>
-{% endblock %}
+@stop
 
-{% block javascript %}
+@section('javascripts')
     <script src="js/funcionesIndex.js"></script>
-{% endblock %}
+@stop
 
-{% block body %}
+@section('body')
 
     <!-- Creo descripcion -->
     <div id="panelDescripcion">
@@ -23,4 +25,4 @@
         </div>
     </div>
 
-{% endblock %}
+@stop

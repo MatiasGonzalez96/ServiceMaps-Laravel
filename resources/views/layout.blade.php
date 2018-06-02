@@ -10,8 +10,7 @@
         <!-- Cargo links externos -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel='stylesheet' href='css/estiloClasico.css'>
-        <link rel='stylesheet' href='css/estilosBarra.css'>
+        <link rel='stylesheet' href='/css/estiloClasico.css'>
         @section('estilos')
         @show
 

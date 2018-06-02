@@ -22,7 +22,14 @@ class ControladorServicios extends Controller
 	{
 		$servicios = Servicio::all();
 
-		return view('editarServicio', ['servicios' => $servicios]);
+		return view('editar', ['servicios' => $servicios]);
+	}
+
+	public function editarServicio(Request $request)
+	{
+		$servicio = Servicio::where('id', $request -> id)->get();
+
+		return view('editarServicio', ['servicio' => $servicio]);
 	}
 
 	public function eliminar()

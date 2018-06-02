@@ -7,8 +7,7 @@
 @stop
 
 @section('javascripts')
-    <script src="js/funcionesAgregarServicio.js"></script>
-    <script src="js/funcionesMapa.js"></script>
+    <script src="/js/funcionesMapa.js"></script>
     <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAEttQKWZVwwmLu9Rn9IV37PTCxFIdMNKs&libraries=geometry&callback=initMap' async defer></script>
 @stop
 
@@ -16,7 +15,9 @@
 
     <!-- Creo descripcion -->
     <div id="panelDescripcion">
+
         <span id="textoInformacion">Ingrese los datos del nuevo servicio</span>
+
     </div>
 
     <div id="panelAgregarServicio">
@@ -94,7 +95,7 @@
 
             <div id="panelBotonera">
                 <button class="botonAgregar" type="submit">Agregar Servicio</button>
-                <button id="botonVolver" class="botonAgregar" type="button">Volver</button>
+                <a href="/"><button class="botonAgregar" type="button">Volver</button></a>
             </div>
 
             @include ('error')

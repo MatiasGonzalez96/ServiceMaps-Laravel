@@ -6,10 +6,6 @@
     <link rel='stylesheet' href='css/estilosIndex.css'>
 @stop
 
-@section('javascripts')
-    <script src="js/funcionesIndex.js"></script>
-@stop
-
 @section('body')
 
     <!-- Creo descripcion -->
@@ -19,9 +15,9 @@
 
     <div id="panelABM">
         <div id="panelBotoneraABM">
-            <button id="agregarServicio" class="botonABM" type="submit">Agregar Servicio</button>
-            <button id="editarServicio" class="botonABM" type="submit">Editar Servicio</button>
-            <button id="eliminarServicio" class="botonABM" type="submit">Eliminar Servicio</button>
+            <a class="botonABM" type="button" href="/agregar">Agregar Servicio</a>
+            <a class="botonABM" type="button" href="/editar">Editar Servicio</a>
+            <a class="botonABM" type="button" href="/eliminar">Eliminar Servicio</a>
         </div>
     </div>
 

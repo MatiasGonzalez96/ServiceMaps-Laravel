@@ -23,42 +23,6 @@
 
     <body>
 
-        <!-- Creo barra de busquedas -->
-        <div class="topnav">
-
-            <!-- Centered link -->
-            <div class="topnav-centered">
-            </div>
-
-            <!-- Left-aligned links (default) -->
-            <a id="linkInicio" class="active">Service Maps</a>
-
-            <!-- Right-aligned links -->
-            <div class="topnav-right">
-
-                <!-- Authentication Links -->
-                @guest
-
-                    <a class="nav-link" href="{{ route('login') }}">Iniciar Sesión</a>
-
-                @else
-
-                    <a class="nav-link" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                        Cerrar Sesión
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                        @csrf
-                    </form>
-
-                @endguest
-
-            </div>
-
-        </div>
-
         @section('content')
         @show
 

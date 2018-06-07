@@ -4,6 +4,13 @@
 
 @section('content')
 
+    <!-- Creo descripcion -->
+    <div id="panelDescripcion">
+
+        <span id="textoInformacion">Inicio de sesión</span>
+
+    </div>
+
     <div id="panelLogin">
 
         <form method="POST" action="{{ route('login') }}">

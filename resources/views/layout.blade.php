@@ -42,7 +42,7 @@
                 <!-- Authentication Links -->
                 @guest
 
-                    <a class="nav-link" href="{{ route('login') }}">Iniciar Sesión</a>
+                    <!-- Boton para iniciar sesion -->
 
                 @else
 

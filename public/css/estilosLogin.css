@@ -27,8 +27,7 @@ body
   height: auto;
   width: 600px;
   margin: 50px auto;
-  margin-top: 100px;
-  padding: 40px;
+  padding: 20px;
   background-color: #A4A4A4;
 }
 
@@ -38,6 +37,7 @@ body
   width: auto;
   text-align: center;
   margin: 20px auto;
+  margin-top: 40px;
 }
 
 .boton
@@ -65,7 +65,7 @@ body
 
 #email, #password
 {
-    height: 50px;
+    height: 40px;
     font-size: 14pt;
 }
 

@@ -1,29 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
     <head>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=860">
 
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <title>@yield('pageTitle')</title>
 
-        <!-- Cargo links externos -->
+        <!-- Estilos -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel='stylesheet' href='/css/estiloClasico.css'>
+        <link rel='stylesheet' href='/css/estilosLogin.css'>
         <link rel='stylesheet' href='/css/estilosBarra.css'>
-        @section('estilos')
-        @show
 
-        <!-- Cargo scripts externos -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <!-- Scripts -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        @section('javascripts')
-        @show
 
     </head>
+
     <body>
 
         <!-- Creo barra de busquedas -->
@@ -34,7 +31,7 @@
             </div>
 
             <!-- Left-aligned links (default) -->
-            <a id="linkInicio" href="/" class="active">Inicio</a>
+            <a id="linkInicio" class="active">Service Maps</a>
 
             <!-- Right-aligned links -->
             <div class="topnav-right">
@@ -62,16 +59,16 @@
 
         </div>
 
-        @section('body')
+        @section('content')
         @show
 
-          <!-- Creo Footer -->
-          <footer>
-            <div id="panelFooter">
-                Página web creada por García Matias y González Matias. © 2018 Service Maps.
-            </div>
-          </footer>
-
+        <!-- Creo Footer -->
+        <footer>
+          <div id="panelFooter">
+              Página web creada por García Matias y González Matias. © 2018 Service Maps.
+          </div>
+        </footer>
 
     </body>
+
 </html>

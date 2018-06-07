@@ -21,11 +21,22 @@ class ControladorAgregar extends Controller
 
         $servicio = new Servicio();
 
-        $servicio->id = strtolower(preg_replace("/\s+/", "", $request->nombre));
+        $servicio->id = utf8_encode(strtolower(preg_replace("/\s+/", "", $request->nombre)));
+        $servicio->direccion = $request->direccion;
+
+        $servicios = Servicio::all();
+
+        foreach ($servicios as $s)
+        {
+            if ($s -> id == $servicio -> id || $s -> direccion == $servicio -> direccion)
+            {
+                return redirect('/');
+            }
+        }
+
         $servicio->nombre = $request->nombre;
         $servicio->tipo = $request->tipo;
         $servicio->telefono = $request->telefono;
-        $servicio->direccion = $request->direccion;
         $servicio->sitioweb = $request->sitioweb;
         $servicio->horario = $request->horario;
 

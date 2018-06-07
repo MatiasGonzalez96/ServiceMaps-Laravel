@@ -8,11 +8,9 @@ function initMap()
 	var bahiaBlanca = new google.maps.LatLng(-38.7167, -62.2833);
 
 	map = new google.maps.Map(document.getElementById('map'), {
-	  	zoom: 15,
+	  	zoom: 13,
 	  	center: bahiaBlanca,
         disableDoubleClickZoom: true,
-		zoomControl: false,
-		scrollwheel: false,
     	styles:
     	[
 	      	{
@@ -31,17 +29,19 @@ function initMap()
     ultimoMarcador = new google.maps.Marker;
     geocoder = new google.maps.Geocoder();
 
+	cargarMarcadorSiEditar();
+
     google.maps.event.addListener(map,'click',function(event)
     {
 		var latitud = event.latLng.lat();
 		var longitud = event.latLng.lng();
         latlng = new google.maps.LatLng(latitud, longitud);
-		crearMarcador();
-        mostrarDireccion();
+		crearMarcador(latlng);
+        mostrarDireccion(latlng);
 	});
 }
 
-function crearMarcador()
+function crearMarcador(latlng)
 {
     ultimoMarcador.setMap(null);
     ultimoMarcador = new google.maps.Marker({
@@ -51,7 +51,7 @@ function crearMarcador()
     });
 }
 
-function mostrarDireccion()
+function mostrarDireccion(latlng)
 {
     geocoder.geocode({'latLng': latlng}, function(results, status)
     {
@@ -73,4 +73,16 @@ function mostrarDireccion()
 function eliminarMarcador()
 {
 	ultimoMarcador.setMap(null);
+}
+
+function cargarMarcadorSiEditar()
+{
+	let latitud = $("#latitud").val();
+    let longitud = $("#longitud").val();
+
+	if (latitud != "" && longitud != "")
+	{
+		let latlng = new google.maps.LatLng(latitud, longitud);
+		crearMarcador(latlng);
+	}
 }

@@ -34,6 +34,20 @@ class ControladorServicios extends Controller
 
 	public function eliminar()
 	{
-		return view('eliminarServicio');
+		$servicios = Servicio::all();
+
+		return view('eliminar', ['servicios' => $servicios]);
+	}
+
+	public function eliminarServicio(Request $request)
+	{
+		$servicio = Servicio::where('id', $request -> id)->get();
+
+		return view('eliminarServicio', ['servicio' => $servicio]);
+	}
+
+	public function login()
+	{
+		return view('auth.login');
 	}
 }

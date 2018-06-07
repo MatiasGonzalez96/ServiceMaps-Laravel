@@ -8,11 +8,12 @@ body
 
 #panelABM
 {
-  height: auto;
+  height: 380px;
   width: 860px;
   margin: 50px auto;
   padding: 20px;
   background-color: #BDBDBD;
+  overflow-y: auto;
 }
 
 #panelDescripcion
@@ -33,7 +34,7 @@ body
 
 .botonServicio
 {
-    width: 260px;
+    width: 250px;
     height: 100px;
     cursor: pointer;
     border: none;

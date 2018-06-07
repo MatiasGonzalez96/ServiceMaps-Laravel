@@ -16,13 +16,13 @@
     <!-- Creo descripcion -->
     <div id="panelDescripcion">
 
-        <span id="textoInformacion">Modifique los datos de {{ $servicio[0] -> nombre }}</span>
+        <span id="textoInformacion">Modifique los datos de "{{ $servicio[0] -> nombre }}"</span>
 
     </div>
 
     <div id="panelAgregarServicio">
 
-        <form method="POST" action="agregar">
+        <form method="POST" action="/editar">
 
             {{ csrf_field() }}
 
@@ -36,9 +36,27 @@
                 <div class="form-group col-md-5">
                     <label class="etiqueta" for="tipo">Tipo</label>
                     <select class="form-control" id="tipo" name="tipo">
-                        <option value="Gomería">Gomería</option>
-                        <option value="Estación de Servicio">Estación de Servicio</option>
-                        <option value="Taller Mecánico">Taller Mecánico</option>
+
+                        @if ($servicio[0] -> tipo == "Gomería")
+
+                            <option selected value="Gomería">Gomería</option>
+                            <option value="Estación de Servicio">Estación de Servicio</option>
+                            <option value="Taller Mecánico">Taller Mecánico</option>
+
+                        @elseif ($servicio[0] -> tipo == "Estación de Servicio")
+
+                            <option value="Gomería">Gomería</option>
+                            <option selected value="Estación de Servicio">Estación de Servicio</option>
+                            <option value="Taller Mecánico">Taller Mecánico</option>
+
+                        @else
+
+                            <option value="Gomería">Gomería</option>
+                            <option value="Estación de Servicio">Estación de Servicio</option>
+                            <option selected value="Taller Mecánico">Taller Mecánico</option>
+
+                        @endif
+
                     </select>
                 </div>
 
@@ -54,8 +72,19 @@
                 <div class="form-group col-md-4">
                     <label class="etiqueta" for="horario">Horario</label>
                     <select class="form-control" id="horario" name="horario">
-                        <option value="De 08:00hs a 20:00hs">De 08:00hs a 20:00hs</option>
-                        <option value="Abierto las 24hs">Abierto las 24hs</option>
+
+                        @if ($servicio[0] -> horario == "De 08:00hs a 20:00hs")
+
+                            <option selected value="De 08:00hs a 20:00hs">De 08:00hs a 20:00hs</option>
+                            <option value="Abierto las 24hs">Abierto las 24hs</option>
+
+                        @else
+
+                            <option value="De 08:00hs a 20:00hs">De 08:00hs a 20:00hs</option>
+                            <option selected value="Abierto las 24hs">Abierto las 24hs</option>
+
+                        @endif
+
                     </select>
                 </div>
 
@@ -86,7 +115,7 @@
             </div>
 
             <div id="panelDescripcion">
-                <span id="textoMapa">Click en el mapa para elegir la ubicación</span>
+                <span id="textoMapa">Click en el mapa para modificar la ubicación</span>
             </div>
 
             <div id="panelMapa">
@@ -97,6 +126,8 @@
                 <button class="botonAgregar" type="submit">Modificar Servicio</button>
                 <a href="/editar"><button class="botonAgregar" type="button">Volver</button></a>
             </div>
+
+            <input type="hidden" id="idServicio" name="idServicio" value="{{ $servicio[0] -> _id }}">
 
             @include ('error')
 

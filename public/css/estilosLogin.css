@@ -17,25 +17,19 @@ body
 
 #textoInformacion
 {
-  font-size: 18pt;
+  font-size: 25pt;
   color: white;
   display: inline-block;
 }
 
-#textoMapa
-{
-  font-size: 14pt;
-  color: black;
-  display: inline-block;
-}
-
-#panelEliminarServicio
+#panelLogin
 {
   height: auto;
-  width: 860px;
+  width: 600px;
   margin: 50px auto;
-  padding: 20px;
-  background-color: #BDBDBD;
+  margin-top: 100px;
+  padding: 40px;
+  background-color: #A4A4A4;
 }
 
 #panelBotonera
@@ -69,13 +63,13 @@ body
   text-decoration:  none;
 }
 
-#nombre, #telefono, #pagina, #horario, #direccion, #tipo, #imagen, #latitud, #longitud
+#email, #password
 {
     height: 50px;
     font-size: 14pt;
 }
 
-#nombre:focus, #telefono:focus, #pagina:focus, #tipo:focus, #horario:focus, #direccion:focus, #latitud:focus, #longitud:focus
+#email:focus, #password:focus
 {
     outline: 5px solid grey;
     outline-offset: -5px;
@@ -85,6 +79,11 @@ body
 .etiqueta
 {
     font-size: 14pt;
+}
+
+#logout-form
+{
+    display: none;
 }
 
 #panelFooter

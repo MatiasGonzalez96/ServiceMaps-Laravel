@@ -45,9 +45,4 @@ class ControladorServicios extends Controller
 
 		return view('eliminarServicio', ['servicio' => $servicio]);
 	}
-
-	public function login()
-	{
-		return view('/Auth/login');
-	}
 }

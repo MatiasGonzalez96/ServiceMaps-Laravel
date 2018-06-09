@@ -11,13 +11,13 @@
         <title>@yield('pageTitle')</title>
 
         <!-- Estilos -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel='stylesheet' href='/css/estiloClasico.css'>
         <link rel='stylesheet' href='/css/estilosLogin.css'>
         <link rel='stylesheet' href='/css/estilosBarra.css'>
 
         <!-- Scripts -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="{{ asset('js/app.js') }}" defer></script>
 
     </head>
 

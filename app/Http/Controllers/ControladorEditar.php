@@ -28,11 +28,17 @@ class ControladorEditar extends Controller
 
         $servicios = Servicio::all();
 
-        foreach ($servicios as $s)
+        foreach ($servicios as $ser)
         {
-            if ($s -> id == $servicio -> id || $s -> direccion == $servicio -> direccion)
+            $id1 = (string)$servicio['_id'];
+            $id2 = (string)$ser['_id'];
+
+            if ($id1 != $id2)
             {
-                return redirect('/editar');
+                if ($ser -> id == $servicio -> id || $ser -> direccion == $servicio -> direccion)
+                {
+                    return redirect('/editar');
+                }
             }
         }
 

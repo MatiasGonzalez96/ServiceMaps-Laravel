@@ -30,15 +30,17 @@
 
                 <div class="form-group col-md-7">
                     <label class="etiqueta" for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Servicio" name="nombre" required>
+                    <input type="text" class="form-control" id="nombre" placeholder="Servicio" name="nombre" value="{{ old('nombre') }}"required>
                 </div>
 
                 <div class="form-group col-md-5">
                     <label class="etiqueta" for="tipo">Tipo</label>
                     <select class="form-control" id="tipo" name="tipo">
-                        <option value="Gomería">Gomería</option>
+
+                        <option selected value="Gomería">Gomería</option>
                         <option value="Estación de Servicio">Estación de Servicio</option>
                         <option value="Taller Mecánico">Taller Mecánico</option>
+
                     </select>
                 </div>
 
@@ -48,20 +50,22 @@
 
                 <div class="form-group col-md-3">
                     <label class="etiqueta" for="telefono">Teléfono</label>
-                    <input type="text" class="form-control" id="telefono" placeholder="(0291) 455-5555" name="telefono" required>
+                    <input type="text" class="form-control" id="telefono" placeholder="(0291) 455-5555" name="telefono" value="{{ old('telefono') }}" required>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="etiqueta" for="horario">Horario</label>
                     <select class="form-control" id="horario" name="horario">
+
                         <option value="De 08:00hs a 20:00hs">De 08:00hs a 20:00hs</option>
                         <option value="Abierto las 24hs">Abierto las 24hs</option>
+
                     </select>
                 </div>
 
                 <div class="form-group col-md-5">
-                    <label class="etiqueta" for="paginaweb">Sitio Web</label>
-                    <input type="text" class="form-control" id="pagina" placeholder="www.servicio.com" name="sitioweb" required>
+                    <label class="etiqueta" for="sitioweb">Sitio Web</label>
+                    <input type="text" class="form-control" id="pagina" placeholder="www.servicio.com" name="sitioweb" value="{{ old('sitioweb') }}" required>
                 </div>
 
             </div>
@@ -70,17 +74,17 @@
 
                 <div class="form-group col-md-4">
                     <label class="etiqueta" for="direccion">Dirección</label>
-                    <input type="text" class="form-control" id="direccion" placeholder="Prueba 123" readonly name="direccion" required>
+                    <input type="text" class="form-control" id="direccion" placeholder="Prueba 123" readonly name="direccion" value="{{ old('direccion') }}" required>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="etiqueta" for="latitud">Latitud</label>
-                    <input type="text" class="form-control" id="latitud" placeholder="Latitud" readonly name="latitud" required>
+                    <input type="text" class="form-control" id="latitud" placeholder="Latitud" readonly name="latitud" value="{{ old('latitud') }}" required>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="etiqueta" for="longitud">Longitud</label>
-                    <input type="text" class="form-control" id="longitud" placeholder="Longitud" readonly name="longitud" required>
+                    <input type="text" class="form-control" id="longitud" placeholder="Longitud" readonly name="longitud" value="{{ old('longitud') }}" required>
                 </div>
 
             </div>

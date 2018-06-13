@@ -1,13 +1,15 @@
 @extends('layout')
 
-@section('pageTitle', 'Eliminar Servicio')
+@section('pageTitle', 'Ver Servicio')
 
 @section('estilos')
     <link rel='stylesheet' href='/css/estilosEliminarServicio.css'>
+    <link rel='stylesheet' href='/css/estilosVerServicio.css'>
 @stop
 
 @section('javascripts')
-    <script src="/js/funcionesEliminar.js"></script>
+    <script src="/js/funcionesVerServicio.js"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAEttQKWZVwwmLu9Rn9IV37PTCxFIdMNKs&libraries=geometry&callback=initMap' async defer></script>
 @stop
 
 @section('body')
@@ -15,7 +17,7 @@
     <!-- Creo descripcion -->
     <div id="panelDescripcion">
 
-        <span id="textoInformacion">Eliminar "{{ $servicio[0] -> nombre }}"</span>
+        <span id="textoInformacion">Servicio actual: "{{ $servicio[0] -> nombre }}"</span>
 
     </div>
 
@@ -77,9 +79,12 @@
 
             </div>
 
+            <div id="panelMapa">
+              <div id="map"></div>
+            </div>
+
             <div id="panelBotonera">
-                <button id="botonEliminar" class="boton" type="button">Eliminar Servicio</button>
-                <a href="/eliminar"><button class="boton" type="button">Volver</button></a>
+                <a href="/ver"><button class="boton" type="button">Volver</button></a>
             </div>
 
         </form>

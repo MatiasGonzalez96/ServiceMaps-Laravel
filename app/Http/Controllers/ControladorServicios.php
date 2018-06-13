@@ -45,4 +45,18 @@ class ControladorServicios extends Controller
 
 		return view('eliminarServicio', ['servicio' => $servicio]);
 	}
+
+	public function ver()
+	{
+		$servicios = Servicio::all();
+
+		return view('ver', ['servicios' => $servicios]);
+	}
+
+	public function verServicio(Request $request)
+	{
+		$servicio = Servicio::where('id', $request -> id)->get();
+
+		return view('verServicio', ['servicio' => $servicio]);
+	}
 }

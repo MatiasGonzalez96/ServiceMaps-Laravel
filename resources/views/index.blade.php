@@ -18,6 +18,8 @@
             <a class="botonABM" type="button" href="/agregar">Agregar Servicio</a>
             <a class="botonABM" type="button" href="/editar">Editar Servicio</a>
             <a class="botonABM" type="button" href="/eliminar">Eliminar Servicio</a>
+            <hr id="separador">
+            <a class="botonABM" type="button" href="/ver">Ver Servicios</a>
         </div>
     </div>
 

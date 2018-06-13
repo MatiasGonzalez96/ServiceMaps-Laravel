@@ -46,8 +46,7 @@ function crearMarcador(latlng)
     ultimoMarcador.setMap(null);
     ultimoMarcador = new google.maps.Marker({
         position: latlng,
-        map: map,
-        label: "S"
+        map: map
     });
 }
 

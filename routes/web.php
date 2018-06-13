@@ -18,6 +18,12 @@ Route::get('/eliminar', 'ControladorServicios@eliminar') -> middleware('auth');
 //Get eliminar/id
 Route::get('/eliminar/{id}', 'ControladorServicios@eliminarServicio') -> middleware('auth');
 
+//Get ver
+Route::get('/ver', 'ControladorServicios@ver') -> middleware('auth');
+
+//Get ver/id
+Route::get('/ver/{id}', 'ControladorServicios@verServicio') -> middleware('auth');
+
 //Post agregar
 Route::post('agregar', 'ControladorAgregar@agregar') -> middleware('auth');
 

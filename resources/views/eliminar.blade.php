@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('pageTitle', 'Eliminar Servicio')
+@section('pageTitle', 'Eliminar Servicios')
 
 @section('estilos')
     <link rel='stylesheet' href='/css/estilosEditar.css'>

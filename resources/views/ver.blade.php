@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('pageTitle', 'Editar Servicios')
+@section('pageTitle', 'Ver Servicios')
 
 @section('estilos')
     <link rel='stylesheet' href='css/estilosEditar.css'>
@@ -11,7 +11,7 @@
     <!-- Creo descripcion -->
     <div id="panelDescripcion">
 
-        <span id="textoInformacion">Elija un servicio para modificar</span>
+        <span id="textoInformacion">Elija un servicio para ver su información</span>
 
     </div>
 
@@ -19,7 +19,7 @@
 
         @foreach ($servicios as $servicio)
 
-            <a class="botonServicio" type="button" href="/editar/{{ $servicio -> id }}">{{ $servicio -> nombre }}</a>
+            <a class="botonServicio" type="button" href="/ver/{{ $servicio -> id }}">{{ $servicio -> nombre }}</a>
 
         @endforeach
 

@@ -23,6 +23,11 @@
 
     <body>
 
+        <!-- Creo logo -->
+        <div id="panelBanner">
+          <image id="imagenBanner" src="/imgs/logo.png" ></image>
+        </div>
+
         @section('content')
         @show
 

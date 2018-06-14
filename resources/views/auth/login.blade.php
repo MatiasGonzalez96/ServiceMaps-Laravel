@@ -4,13 +4,6 @@
 
 @section('content')
 
-    <!-- Creo descripcion -->
-    <div id="panelDescripcion">
-
-        <span id="textoInformacion">Inicio de sesión</span>
-
-    </div>
-
     <div id="panelLogin">
 
         <form method="POST" action="{{ route('login') }}">
@@ -18,15 +11,13 @@
 
             <div class="form-group">
 
-                <label for="email" class="etiqueta">Email</label>
-                <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
 
             </div>
 
             <div class="form-group">
 
-                <label for="password" class="etiqueta">Contraseña</label>
-                <input id="password" type="password" class="form-control" name="password" required>
+                <input id="password" type="password" class="form-control" name="password" placeholder="Contraseña" required>
 
             </div>
 

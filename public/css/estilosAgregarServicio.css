@@ -93,8 +93,8 @@ body
 
 #nombre:focus, #telefono:focus, #pagina:focus, #tipo:focus, #horario:focus, #direccion:focus, #latitud:focus, #longitud:focus
 {
-    outline: 5px solid grey;
-    outline-offset: -5px;
+    outline: 3px solid dimgrey;
+    outline-offset: -3px;
     box-shadow: none !important;
 }
 

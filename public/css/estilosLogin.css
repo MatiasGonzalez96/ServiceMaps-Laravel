@@ -26,7 +26,7 @@ body
   height: auto;
   width: 600px;
   margin: 50px auto;
-  padding: 15px;
+  padding: 20px;
   background-color: #A4A4A4;
 }
 
@@ -65,12 +65,13 @@ body
 {
     height: 50px;
     font-size: 16pt;
+    margin: 20px auto;
 }
 
 #email:focus, #password:focus
 {
-    outline: 5px solid grey;
-    outline-offset: -5px;
+    outline: 3px solid dimgrey;
+    outline-offset: -3px;
     box-shadow: none !important;
 }
 
